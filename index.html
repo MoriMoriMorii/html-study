@@ -26,6 +26,14 @@
         
         <button onclick="location.href='fooled_you.html'" type="button">
             Click Me</button>
-        
+
+        <h2>Suggestion Box</h2>
+        <p>Have a suggestion? Submit it below:</p>
+
+        <form action="https://api.github.com/repos/USERNAME/REPO_NAME/contents/suggestions.txt" method="POST">
+            <label for="suggestion">Your Suggestion:</label>
+            <textarea id="suggestion" name="content" rows="4" cols="50" required></textarea><br>
+            <input type="submit" value="Submit Suggestion">
+        </form>
     </body>
 </html>
