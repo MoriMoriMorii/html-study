@@ -17,6 +17,7 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
         <h1>Header 1</h1>
         <p>Paragraph</p>
         <button onclick="location.href='fooled_you.html'" type="button">
@@ -30,13 +31,23 @@
         <h2>Suggestion Box</h2>
         <p>Have a suggestion? Submit it below:</p>
 
-        <form action="submit.php" method="post">
-            <label for="suggestion">Your Suggestion:</label>
-            <br>
-            <textarea id="suggestion" name="suggestion" rows="4" cols="50" required></textarea>
-            <br>
-            <input type="submit" value="Submit Suggestion">
-        </form>
-    
+    <form action="https://morimorimorii.github.io/html-study/submit.php" method="get">
+        <label for="suggestion">Your Suggestion:</label>
+        <br>
+        <textarea id="suggestion" name="suggestion" rows="4" cols="50" required></textarea>
+        <br>
+        <input type="submit" value="Submit Suggestion">
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const suggestion = urlParams.get('suggestion');
+        
+            if (suggestion) {
+                // Do something with the suggestion, e.g., display it on the page
+                document.getElementById('result').innerText = 'Suggestion: ' + suggestion;
+            }
+        });
+    </script>
     </body>
 </html>
