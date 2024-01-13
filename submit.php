@@ -1,16 +1,11 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $suggestion = $_POST["content"];
+$suggestion = $_POST['suggestion'];
+$file_path = 'path/to/suggestions.txt';
 
-    // Save the suggestion to a text file
-    $file = fopen("suggestions.txt", "a");
-    fwrite($file, $suggestion . "\n");
-    fclose($file);
+// Append the suggestion to the text document
+file_put_contents($file_path, $suggestion . PHP_EOL, FILE_APPEND);
 
-    echo "Suggestion submitted successfully!";
-} else {
-    // Redirect to the form if accessed directly
-    header("Location: index.html");
-    exit();
-}
+// Redirect back to the suggestion form or any other desired page
+header("Location: suggestion_form.html");
+exit();
 ?>
