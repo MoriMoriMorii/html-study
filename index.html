@@ -31,23 +31,33 @@
         <h2>Suggestion Box</h2>
         <p>Have a suggestion? Submit it below:</p>
 
-    <form action="https://morimorimorii.github.io/html-study/" method="get">
-        <label for="suggestion">Your Suggestion:</label>
-        <br>
-        <textarea id="suggestion" name="suggestion" rows="4" cols="50" required></textarea>
-        <br>
-        <input type="submit" value="Submit Suggestion">
-    </form>
+    <label for="suggestionInput">Enter your suggestion:</label>
+    <input type="text" id="suggestionInput">
+    <button onclick="addSuggestion()">Submit</button>
+
+    <div id="suggestionList">
+        <h2>Suggestions:</h2>
+        <ul id="suggestions"></ul>
+    </div>
+
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const suggestion = urlParams.get('suggestion');
-        
-            if (suggestion) {
-                // Do something with the suggestion, e.g., display it on the page
-                document.getElementById('result').innerText = 'Suggestion: ' + suggestion;
+        function addSuggestion() {
+            // Get the input value
+            var suggestion = document.getElementById("suggestionInput").value;
+
+            // Check if the input is not empty
+            if (suggestion.trim() !== "") {
+                // Create a new list item
+                var listItem = document.createElement("li");
+                listItem.appendChild(document.createTextNode(suggestion));
+
+                // Append the new suggestion to the list
+                document.getElementById("suggestions").appendChild(listItem);
+
+                // Clear the input field
+                document.getElementById("suggestionInput").value = "";
             }
-        });
-    </script>
+        }
+    </script
     </body>
 </html>
