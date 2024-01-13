@@ -30,34 +30,24 @@
 
         <h2>Suggestion Box</h2>
         <p>Have a suggestion? Submit it below:</p>
-
-    <label for="suggestionInput">Enter your suggestion:</label>
-    <input type="text" id="suggestionInput">
-    <button onclick="addSuggestion()">Submit</button>
-
-    <div id="suggestionList">
-        <h2>Suggestions:</h2>
-        <ul id="suggestions"></ul>
-    </div>
-
-    <script>
-        function addSuggestion() {
-            // Get the input value
-            var suggestion = document.getElementById("suggestionInput").value;
-
-            // Check if the input is not empty
-            if (suggestion.trim() !== "") {
-                // Create a new list item
-                var listItem = document.createElement("li");
-                listItem.appendChild(document.createTextNode(suggestion));
-
-                // Append the new suggestion to the list
-                document.getElementById("suggestions").appendChild(listItem);
-
-                // Clear the input field
-                document.getElementById("suggestionInput").value = "";
+        <p>Submit your suggestions through GitHub issues:</p>
+        <textarea id="suggestion" placeholder="Type your suggestion here"></textarea>
+        <button onclick="submitSuggestion()">Submit</button>
+    
+        <script>
+            function submitSuggestion() {
+                var suggestionText = document.getElementById('suggestion').value;
+    
+                if (suggestionText.trim() === '') {
+                    alert('Please enter a suggestion.');
+                    return;
+                }
+    
+                var githubLink = 'https://github.com/your-username/your-repo/issues/new?title=Suggestion&body=' + encodeURIComponent(suggestionText);
+    
+                // Open the GitHub link in a new tab
+                window.open(githubLink, '_blank');
             }
-        }
-    </script
+        </script>
     </body>
 </html>
