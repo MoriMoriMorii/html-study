@@ -13,13 +13,46 @@
         <link rel="stylesheet" href="styles.css">
         <script src="./script.js"></script>
     </head>
-    <body>
+    <style>
+        #sidebar {
+            width: 250px;
+            height: 10000%;
+            background-color: transparent;
+            position: relative;
+            right:0;
+            top:0 ;
+            padding-top: 20px;
+            color: transparent;
+        }
         
+        #sidebar a {
+            padding: 10px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            display: block;
+            transition: 0.3s;
+        }
+        
+        #sidebar a:hover {
+            background-color: transparent;
+        }
+        
+        #content {
+            margin-right: 250px;
+            padding: 20px;
+        
+        }</style>
+    <body>
+        <div id="sidebar">
+        <a href="index.html">Main Page</a>
+        <a href="fooled_you.html">Colored Background and JS Test</a>
+        <a href="aboutme.html">About the Author</a>
+        <!-- Add more links as needed -->
+        </div>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <h1 class="special-header">Site by MoriMoriMori</h1>
         <p>A dev with no sense of sense</p>
-        <button class="button_no_boarder_small" onclick="location.href='aboutme.html'">Click here to learn more about the author!</button>
     </body>
 </html>

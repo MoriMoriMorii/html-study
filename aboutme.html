@@ -12,12 +12,47 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
     </head>
+    <style>
+        #sidebar {
+            width: 250px;
+            height: 10000%;
+            background-color: transparent;
+            position: relative;
+            right:0;
+            top:0 ;
+            padding-top: 20px;
+            color: transparent;
+        }
+        
+        #sidebar a {
+            padding: 10px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            display: block;
+            transition: 0.3s;
+        }
+        
+        #sidebar a:hover {
+            background-color: transparent;
+        }
+        
+        #content {
+            margin-right: 250px;
+            padding: 20px;
+        
+        }</style>
     <body>
+        <div id="sidebar">
+        <a href="index.html">Main Page</a>
+        <a href="fooled_you.html">Colored Background and JS Test</a>
+        <a href="anotherpage.html">Main Credits</a>
+        </div>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <h1 class = "special-header">About the Author:</h1>
-        <img src = "image.bmp" style="width: 400px;" class = "boardered_image">
+        <button onclick="location.href='youtube.com/watch?v=dQw4w9WgXcQ'"><img src = "image.bmp" style="width: 400px;" class = "boardered_image">
+            </button>
         <p class = "special-font">     MoriMoriMori, is an indie musician and coder from somewhere in the world</p>
         <script src="script.js" ></script>
     </body>

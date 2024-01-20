@@ -1,18 +1,21 @@
 .button_no_boarder {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
     border: none;
-    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
     cursor: wait;
     font-size: 32px;
 }
 .button_no_boarder_small {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: 0px 0px;
+    background-color: transparent;
+    background-repeat: no-repeat;
     border: none;
-    border-radius: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+
     cursor: not-allowed;
     font-size: 16px;
 }
