@@ -21,35 +21,30 @@
         <h1>Header 1</h1>
         <p>Paragraph</p>
         <button onclick="location.href='fooled_you.html'" type="button">
-@@ -30,13 +31,23 @@ <h1>Header 1</h1>
+        <img src="nyan.gif"style="width: 500px" alt="Nyam Cat"></button>
+
+        <p>Nyan Cat</p>
+
+
         <h2>Suggestion Box</h2>
-        <p>Have a suggestion? Submit it below:</p>
+        <p>Submit your suggestions through GitHub issues:</p>
+        <textarea id="suggestion" placeholder="Type your suggestion here"></textarea>
+        <button onclick="submitSuggestion()">Submit</button>
 
-        <form action="submit.php" method="post">
-            <label for="suggestion">Your Suggestion:</label>
-            <br>
-            <textarea id="suggestion" name="suggestion" rows="4" cols="50" required></textarea>
-            <br>
-            <input type="submit" value="Submit Suggestion">
-        </form>
+        <script>
+            function submitSuggestion() {
+                var suggestionText = document.getElementById('suggestion').value;
 
-    <form action="https://morimorimorii.github.io/html-study/submit.php" method="get">
-        <label for="suggestion">Your Suggestion:</label>
-        <br>
-        <textarea id="suggestion" name="suggestion" rows="4" cols="50" required></textarea>
-        <br>
-        <input type="submit" value="Submit Suggestion">
-    </form>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const suggestion = urlParams.get('suggestion');
+                if (suggestionText.trim() === '') {
+                    alert('Please enter a suggestion.');
+                    return;
+                }
 
-            if (suggestion) {
-                // Do something with the suggestion, e.g., display it on the page
-                document.getElementById('result').innerText = 'Suggestion: ' + suggestion;
+                var githubLink = 'https://github.com/MoriMoriMorii/html-study/issues/new?title=Suggestion&body=' + encodeURIComponent(suggestionText);
+
+                // Open the GitHub link in a new tab
+                window.open(githubLink, '_blank');
             }
-        });
-    </script>
+        </script>
     </body>
 </html>
