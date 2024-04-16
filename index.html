@@ -7,41 +7,77 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Mori's Half-baked HTML Horror</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
-        <script> src="./script.js" type="text/JavaScript"</script>
+        <script> src="./script.js" ;type="text/JavaScript"</script>
+    <style>
+    #sidebar {
+        width: 250px;
+        height: 10000%;
+        background-color: rgb(255, 255, 255);
+        position: relative;
+        right:0;
+        top:0 ;
+        padding-top: 20px;
+        color: white;
+    }
+
+    #sidebar a {
+        padding: 10px;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        display: block;
+        transition: 0.3s;
+    }
+
+    #sidebar a:hover {
+        background-color: rgb(255, 255, 255);
+    }
+
+    #content {
+        margin-right: 250px;
+        padding: 20px;
+    }</style>
     </head>
+
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <h1>Header 1</h1>
-        <p>Paragraph</p>
-        <button onclick="location.href='fooled_you.html'" type="button">
-        <img src="nyan.gif"style="width: 500px" alt="Nyam Cat"></button>
+        <div id="sidebar">
+            <a href="page1.html">Page 1</a>
+            <a href="page2.html">Page 2</a>
+            <a href="page3.html">Page 3</a>
+            <!-- Add more links as needed -->
+        </div>
 
+        <h1>This is a header, it's not doing much</h1>
+        <p>So we'll go to a paragraph</p>
+        <button onclick="location.href='fooled_you.html'" type="button">
+@@ -26,6 +62,7 @@ <h1>This is a header, it's not doing much</h1>
         <p>Nyan Cat</p>
+
 
 
         <h2>Suggestion Box</h2>
         <p>Submit your suggestions through GitHub issues:</p>
         <textarea id="suggestion" placeholder="Type your suggestion here"></textarea>
         <button onclick="submitSuggestion()">Submit</button>
-
+    
         <script>
             function submitSuggestion() {
                 var suggestionText = document.getElementById('suggestion').value;
-
+    
                 if (suggestionText.trim() === '') {
                     alert('Please enter a suggestion.');
                     return;
                 }
-
+    
                 var githubLink = 'https://github.com/MoriMoriMorii/html-study/issues/new?title=Suggestion&body=' + encodeURIComponent(suggestionText);
-
+    
                 // Open the GitHub link in a new tab
                 window.open(githubLink, '_blank');
             }
