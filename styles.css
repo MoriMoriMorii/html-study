@@ -24,7 +24,7 @@ body {
   }
 body {
   background-image: url("images.jpg");
-  background-repeat: repeat-y;
+  background-repeat: repeat-x;
 }
 /* Font style for a specific header */
 h1.special-header {
