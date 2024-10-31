@@ -30,7 +30,7 @@ h1.special-header {
     font-size: 28px; /* Set a custom font size */
 }
 p.special-font {
-    font-family: 'Brush Script MT', cursive;
+    font-family: 'Courier New', monospace;
 }
 img.boardered_image {
   border: 5px solid #555;
